@@ -5,12 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Opec Indonesia</title>
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body, html {
+            height: 100%;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .background {
+            --x: 0px;
+            --y: 0px;
+            height: 100%;
+            background-image: url('https://hdqwalls.com/download/andromeda-galaxy-way-ik-1920x1080.jpg');
+            background-position: var(--x) var(--y);
+            background-size: 200%, 100%;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, .8);
+            background-blend-mode: darken;
+        }
+
+        h1 {
+            letter-spacing: 20px;
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 30%;
+            left: 50%;
+            text-align: center;
+        }
+
+        #time {
+            letter-spacing: 20px;
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            text-align: center;
+        }
+
+        img {
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            width: 50px;
+            height: 50px;
+            margin: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 12px;
+                letter-spacing: 10px;
+                color: white;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 30%;
+                left: 50%;
+                text-align: center;
+            }
+
+            #time {
+                font-size: 12px;
+                letter-spacing: 10px;
+                color: white;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                text-align: center;
+            }
+
+            .background {
+                height: 100%;
+                background-image: url('https://hdqwalls.com/download/andromeda-galaxy-way-ik-1920x1080.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: rgba(0, 0, 0, .6);
+                background-blend-mode: darken;
+            }
+
+            img {
+                position: absolute;
+                bottom: 0%;
+                right: 0%;
+                width: 20px;
+                height: 20px;
+                margin: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello Taufiq</h1>
+    <div class="background" id="background">
+        <img src="profile.png">
+    </div>
+    <h1>OPEC INDONESIA</h1>
+    <h1 id="time"></h1>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script>
+        const el = document.querySelector("#background");
+
+        el.addEventListener("mousemove", (e) => {
+        el.style.setProperty('--x', -e.offsetX + "px");
+        el.style.setProperty('--y', -e.offsetY + "px");
+        });
+
+        const time = document.querySelector("#time");
+        setInterval(function(){
+            time.innerText = moment().format('HH:mm:ss') + ' WIB';
+        }, 1000);
+    </script>
 </body>
 </html>
