@@ -4,127 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Opec Indonesia</title>
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Moh Taufiqur Rohman</title>
     <style>
-        body, html {
-            height: 100%;
-            font-family: 'Rajdhani', sans-serif;
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        /* end css reset */
+        html * {
+            font-family: 'IBM Plex Mono', monospace;
         }
 
-        * {
+        body {
+            background: #222831;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            padding-top: 5%;
+        }
+
+        .title {
+            margin: 4% auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            width: 50%;
+            padding: 20px;
+            border: 2px dashed #FAE042;
+            color: #FAE042;
             box-sizing: border-box;
         }
 
-        .background {
-            --x: 0px;
-            --y: 0px;
-            height: 100%;
-            background-image: url('https://hdqwalls.com/download/andromeda-galaxy-way-ik-1920x1080.jpg');
-            background-position: var(--x) var(--y);
-            background-size: 200%, 100%;
-            background-repeat: no-repeat;
-            background-color: rgba(0, 0, 0, .8);
-            background-blend-mode: darken;
+        .content {
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #BFA612;
+            font-size: 20px;
         }
 
-        h1 {
-            letter-spacing: 20px;
-            font-size: 50px;
-            color: white;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 30%;
-            left: 50%;
-            text-align: center;
+        .sosmed {
+            margin: 5% auto;
+            width: 50%;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
-        #time {
-            letter-spacing: 20px;
-            font-size: 50px;
-            color: white;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
+        a {
+            color: #BFA612;
+            text-decoration: none;
+        }
+
+        .footer {
+            color: #BFA612;
             text-align: center;
+            margin: 8% auto 2% auto;
+            width: 50%;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            width: 30%;
+            background: #373831;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            padding: 20px;
+            color: #BFA612;
+            box-sizing: border-box;   
+        }
+
+        .icon {
+            margin: 5% auto;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 5px solid #BFA612;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #BFA612;
+            background: #373831;
+            font-size: 30px;
+        }
+
+        .logo {
+            margin: 5px auto 30px auto;
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            background: #BFA612;
+            border-radius: 50%;
         }
 
         img {
-            position: absolute;
-            bottom: 0%;
-            right: 0%;
-            width: 50px;
-            height: 50px;
-            margin: 20px;
+            width: 100%;
+            height: 100%;
         }
 
-        @media only screen and (max-width: 600px) {
-            h1 {
-                font-size: 12px;
-                letter-spacing: 10px;
-                color: white;
-                position: absolute;
-                transform: translate(-50%, -50%);
-                top: 30%;
-                left: 50%;
-                text-align: center;
-            }
-
-            #time {
-                font-size: 12px;
-                letter-spacing: 10px;
-                color: white;
-                position: absolute;
-                transform: translate(-50%, -50%);
-                top: 50%;
-                left: 50%;
-                text-align: center;
-            }
-
-            .background {
-                height: 100%;
-                background-image: url('https://hdqwalls.com/download/andromeda-galaxy-way-ik-1920x1080.jpg');
-                background-size: auto, 100%;
-                background-repeat: no-repeat;
-                background-color: rgba(0, 0, 0, .6);
-                background-blend-mode: darken;
-            }
-
-            img {
-                position: absolute;
-                bottom: 0%;
-                right: 0%;
-                width: 20px;
-                height: 20px;
-                margin: 10px;
+        @media only screen and (max-width: 960px) {
+            .sosmed {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background" id="background">
-        <img src="profile.png">
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <img src="logo.png" alt="taufiq.img">
+            </div>
+            Moh Taufiqur Rohman
+        </div>
+        <div class="sosmed">
+            <a target="_blank" href="https://www.facebook.com/people/Muhammad-Taufiq/100006181458178" title="Facebook Taufiq">
+                <div class="icon">
+                    <i class="fa fa-facebook-square"></i>
+                </div>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/mohtaufiqurrohman01/" title="Instagram Taufiq">
+                <div class="icon">
+                    <i class="fa fa-instagram"></i>
+                </div>
+            </a>
+            <a target="_blank" href="https://twitter.com/mohtaufiq01/" title="Twitter Taufiq">
+                <div class="icon">
+                    <i class="fa fa-twitter"></i>                
+                </div>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/moh-taufiqur-rohman-a389a8181/" title="Linked In Taufiq">
+                <div class="icon">
+                    <i class="fa fa-linkedin-square"></i>                
+                </div>
+            </a>
+            <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=taufiqpe@gmail.com" title="Email Taufiq">
+                <div class="icon">
+                    <i class="fa fa-google"></i>                
+                </div>
+            </a>
+        </div>
+        <div class="footer">
+            <p>Code snippets licensed under <a href="https://oss.ninja/mit?organization=Alligator.io">MIT</a>, unless otherwise noted. <br>Content &amp; Graphics © 2019 Alligator.io LLC</p>
+        </div>
     </div>
-    <h1>OPEC INDONESIA</h1>
-    <h1 id="time"></h1>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://use.fontawesome.com/8b4695c237.js"></script>
+
     <script>
-        const el = document.querySelector("#background");
-
-        el.addEventListener("mousemove", (e) => {
-        el.style.setProperty('--x', -e.offsetX + "px");
-        el.style.setProperty('--y', -e.offsetY + "px");
-        });
-
-        const time = document.querySelector("#time");
-        setInterval(function(){
-            time.innerText = moment().format('HH:mm:ss') + ' WIB';
-        }, 1000);
+        
     </script>
 </body>
 </html>
