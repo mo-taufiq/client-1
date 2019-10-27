@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#222831" />
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -228,7 +229,20 @@
     <script src="https://use.fontawesome.com/8b4695c237.js"></script>
 
     <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(sendPosition);
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        }
         
+        function sendPosition(position) {
+            console.log("Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude);
+        }
+
+        getLocation()
     </script>
 </body>
 </html>
