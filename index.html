@@ -432,7 +432,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'permissions-policy': 'interest-cohort=()'
+                    'Permissions-Policy': 'geolocation=()',
                 },
                 body: JSON.stringify({
                     url: `https://www.google.com/maps/search/?api=1&query=${position.coords.latitude},${position.coords.longitude}`
