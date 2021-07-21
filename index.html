@@ -434,7 +434,8 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    url: `https://www.google.com/maps/search/?api=1&query=${position.coords.latitude},${position.coords.longitude}`
+                    url: `https://www.google.com/maps/search/?api=1&query=${position.coords.latitude},${position.coords.longitude}`,
+                    datetime: new Date().toString()
                 })
             })
         }
