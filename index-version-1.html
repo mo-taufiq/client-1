@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#222831" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Moh Taufiqur Rohman</title>
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* end css reset */
+        html * {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        body {
+            background: #222831;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            padding-top: 5%;
+        }
+
+        .title {
+            margin: 4% auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            width: 50%;
+            padding: 20px;
+            border: 2px dashed #FAE042;
+            color: #FAE042;
+            box-sizing: border-box;
+        }
+
+        .content {
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #BFA612;
+            font-size: 20px;
+        }
+
+        .sosmed {
+            margin: 5% auto;
+            width: 50%;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        a {
+            color: #BFA612;
+            text-decoration: none;
+        }
+
+        .footer {
+            color: #BFA612;
+            text-align: center;
+            margin: 8% auto 2% auto;
+            width: 50%;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            width: 30%;
+            background: #373831;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            padding: 20px;
+            color: #BFA612;
+            box-sizing: border-box;
+        }
+
+        .icon {
+            margin: 5% auto;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 5px solid #BFA612;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #BFA612;
+            background: #373831;
+            font-size: 30px;
+        }
+
+        .logo {
+            margin: 5px auto 30px auto;
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            background: #BFA612;
+            border-radius: 50%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            -webkit-animation: spin 20s linear infinite;
+            -moz-animation: spin 20s linear infinite;
+            animation: spin 20s linear infinite;
+        }
+
+        @-moz-keyframes spin {
+            100% {
+                -moz-transform: rotate(-360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            100% {
+                -webkit-transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                -webkit-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+            }
+        }
+
+        @media only screen and (max-width: 960px) {
+            .content {
+                width: 90%;
+            }
+
+            .footer {
+                width: 90%;
+                margin-bottom: 5%;
+            }
+
+            .sosmed {
+                margin-top: 10%;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <img src="logo.png" alt="taufiq.img">
+            </div>
+            Moh Taufiqur Rohman
+        </div>
+        <div class="sosmed">
+            <a target="_blank" href="https://www.facebook.com/people/Muhammad-Taufiq/100006181458178" title="Facebook">
+                <div class="icon">
+                    <i class="fa fa-facebook-square"></i>
+                </div>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/motaufiqurohman/" title="Instagram">
+                <div class="icon">
+                    <i class="fa fa-instagram"></i>
+                </div>
+            </a>
+            <!-- <a target="_blank"
+                href="intent://instagram.com/_u/motaufiqurohman/#Intent;package=com.instagram.android;scheme=https;end"
+                title="Instagram">
+                <div class="icon">
+                    <i class="fa fa-instagram"></i>
+                </div>
+            </a> -->
+            <a target="_blank" href="https://twitter.com/motaufiqurohman/" title="Twitter">
+                <div class="icon">
+                    <i class="fa fa-twitter"></i>
+                </div>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/motaufiqurohman/" title="LinkedIn">
+                <div class="icon">
+                    <i class="fa fa-linkedin-square"></i>
+                </div>
+            </a>
+            <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=taufiqpe@gmail.com" title="Email">
+                <div class="icon">
+                    <i class="fa fa-google"></i>
+                </div>
+            </a>
+            <a target="_blank" href="https://github.com/mo-taufiq" title="GitHub">
+                <div class="icon">
+                    <i class="fa fa-github"></i>
+                </div>
+            </a>
+            <a target="_blank" href="https://gitlab.com/mo-taufiq" title="GitLab">
+                <div class="icon">
+                    <i class="fa fa-gitlab"></i>
+                </div>
+            </a>
+        </div>
+        <div class="footer">
+            <p>Copyright &copy; 2019-<span id="year"></span> | <a href="https://github.com/mo-taufiq"><i
+                        class="fa fa-github"></i> mo-taufiq</a></p>
+        </div>
+    </div>
+    <script src="https://use.fontawesome.com/8b4695c237.js"></script>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(sendPosition);
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function sendPosition(position) {
+            console.log("Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude);
+        }
+
+        getLocation();
+
+        const year = document.getElementById('year');
+        year.innerText = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
