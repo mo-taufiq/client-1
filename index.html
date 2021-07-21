@@ -437,6 +437,12 @@
                 body: JSON.stringify({
                     url: `https://www.google.com/maps/search/?api=1&query=${position.coords.latitude},${position.coords.longitude}`
                 })
+            }).then(function (res) {
+                return res.json()
+            }).then(function (res) {
+                console.log(res)
+            }).catch(function (err) {
+                console.log("error:", err)
             })
         }
 
