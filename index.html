@@ -187,7 +187,7 @@
             height: 100px;
             background: #BFA612;
             border-radius: 100%;
-            box-shadow: 2px 2px 1px 1px #555;
+            box-shadow: 0px 4px 1px 1px #484942;
         }
 
         .container-logo img {
@@ -246,11 +246,37 @@
             background: #373831;
             font-size: 30px;
             margin: 1rem;
+            animation: shadow-down .5s forwards ease-in-out;
         }
 
         section .sosmed-icon-container:hover {
             color: #373831;
             background: #BFA612;
+            animation: shadow-up .1s forwards ease-in-out;
+        }
+
+        @keyframes shadow-up {
+            from {
+                box-shadow: 0px 0px 0px 0px #484942;
+                transform: translateY(0);
+            }
+
+            to {
+                box-shadow: 0px 4px 1px 1px #484942;
+                transform: translateY(-4px);
+            }
+        }
+
+        @keyframes shadow-down {
+            from {
+                box-shadow: 0px 4px 1px 1px #484942;
+                transform: translateY(-4px);
+            }
+
+            to {
+                box-shadow: 0px 0px 0px 0px #484942;
+                transform: translateY(0);
+            }
         }
 
         /* end section */
@@ -408,7 +434,7 @@
             </a>
         </section>
         <footer>
-            <div>
+            <div style="max-width: 500px;">
                 <h1>
                     <!-- <span style="color: #BFA612;">taufiq@karen</span>
                     <span class="font-white">:<span style="color: #BFA612;">~</span class="font-white">$ print</span> -->
