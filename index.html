@@ -187,6 +187,7 @@
             height: 100px;
             background: #BFA612;
             border-radius: 100%;
+            box-shadow: 2px 2px 1px 1px #555;
         }
 
         .container-logo img {
@@ -338,7 +339,8 @@
 
         .wrap,
         .font-white {
-            color: rgb(170, 170, 170);
+            /* color: rgb(170, 170, 170); */
+            color: #BFA612;
         }
 
         @keyframes kedip {
@@ -408,12 +410,12 @@
         <footer>
             <div>
                 <h1>
-                    <span style="color: #BFA612;">taufiq@karen</span><span class="font-white">:<span
-                            style="color: #BFA612;">~</span class="font-white">$ print</span>
-                    <sapn class="typewrite" data-period="3000"
-                        data-type='[ "\"Anda ingin menyumbang? klik atau pindai kode QR Saweria.co di bawah!\"", "\"Hasil dari sumbangan akan diberikan kepada orang yang membutuhkan. Dan kebetulan saya lagi butuh.\"" ]'>
+                    <!-- <span style="color: #BFA612;">taufiq@karen</span>
+                    <span class="font-white">:<span style="color: #BFA612;">~</span class="font-white">$ print</span> -->
+                    <span class="typewrite" data-period="3000"
+                        data-type='[ "\"Anda ingin menyumbang? klik atau pindai kode QR dibawah!\"", "\"Hasil dari sumbangan akan diberikan kepada orang yang membutuhkan. Dan kebetulan saya lagi butuh.\"" ]'>
                         <span class="wrap font-white"></span>
-                    </sapn>
+                    </span>
                 </h1>
             </div>
             <div id="qr-code" class="qr-code">
@@ -427,7 +429,7 @@
     </div>
     <script src="https://use.fontawesome.com/8b4695c237.js"></script>
     <script>
-        let TxtType = function (t, e, i) { this.toRotate = e, this.el = t, this.loopNum = 0, this.period = parseInt(i, 10) || 2e3, this.txt = "", this.tick(), this.isDeleting = !1 }; function handleTypingAnimation() { let t = document.getElementsByClassName("typewrite"); for (let e = 0; e < t.length; e++) { let i = t[e].getAttribute("data-type"), n = t[e].getAttribute("data-period"); i && new TxtType(t[e], JSON.parse(i), n) } let e = document.createElement("style"); e.type = "text/css", document.body.appendChild(e) } function handleQRCodeOnClick() { document.getElementById("qr-code").addEventListener("click", (function () { window.open("https://saweria.co/motaufiqurohaman", "_blank") })) } function handleLinkSosmedOnClick() { document.querySelectorAll(".link-sosmed").forEach((function (t, e) { t.addEventListener("click", (function (t) { this.dataset?.deep_link && isMobileDevice() && (this.href = this.dataset.deep_link) })) })) } function isMobileDevice() { return [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i].some((t => navigator.userAgent.match(t))) } function getLocation() { navigator.geolocation ? navigator.geolocation.getCurrentPosition(logPosition) : console.log("Geolocation is not supported by this browser.") } function logPosition(t) { fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/locations.json", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: `https://www.google.com/maps/search/?api=1&query=${t.coords.latitude},${t.coords.longitude}`, datetime: (new Date).toString() }) }) } function setYearCopyright() { document.getElementById("year").innerText = (new Date).getFullYear() } TxtType.prototype.tick = function () { let t = this.loopNum % this.toRotate.length, e = this.toRotate[t]; this.isDeleting ? this.txt = e.substring(0, this.txt.length - 1) : this.txt = e.substring(0, this.txt.length + 1), this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>"; let i = this, n = 110 - 100 * Math.random(); this.isDeleting && (n /= 4), this.isDeleting || this.txt !== e ? this.isDeleting && "" === this.txt && (this.isDeleting = !1, this.loopNum++, n = 0) : (n = this.period, this.isDeleting = !0), setTimeout((function () { i.tick() }), n) }, window.onload = function () { getLocation(), setYearCopyright(), handleLinkSosmedOnClick(), handleQRCodeOnClick(), handleTypingAnimation() };
+        let TxtType = function (t, e, i) { this.toRotate = e, this.el = t, this.loopNum = 0, this.period = parseInt(i, 10) || 2e3, this.txt = "", this.tick(), this.isDeleting = !1 }; function handleTypingAnimation() { let t = document.getElementsByClassName("typewrite"); for (let e = 0; e < t.length; e++) { let i = t[e].getAttribute("data-type"), n = t[e].getAttribute("data-period"); i && new TxtType(t[e], JSON.parse(i), n) } let e = document.createElement("style"); e.type = "text/css", document.body.appendChild(e) } function handleQRCodeOnClick() { document.getElementById("qr-code").addEventListener("click", (function () { window.open("https://saweria.co/motaufiqurohaman", "_blank") })) } function handleLinkSosmedOnClick() { document.querySelectorAll(".link-sosmed").forEach((function (t, e) { t.addEventListener("click", (function (t) { this.dataset?.deep_link && isMobileDevice() && (this.href = this.dataset.deep_link) })) })) } function isMobileDevice() { return [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i].some((t => navigator.userAgent.match(t))) } function getLocation() { navigator.geolocation ? navigator.geolocation.getCurrentPosition(logPosition) : console.log("Geolocation is not supported by this browser.") } function logPosition(t) { fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/locations.json", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: `https://www.google.com/maps/search/?api=1&query=${t.coords.latitude},${t.coords.longitude}`, datetime: (new Date).toString() }) }) } function setYearCopyright() { document.getElementById("year").innerText = (new Date).getFullYear() } let state = 0; function handleStartTypingAnimation() { if (isMobileDevice) { const t = document.querySelector(".typewrite"); isInViewport(t) && 0 === state ? (handleTypingAnimation(), state = 1) : document.addEventListener("scroll", (function () { isInViewport(t) && 0 === state && (handleTypingAnimation(), state = 1) })) } else handleTypingAnimation() } function isInViewport(t) { const e = t.getBoundingClientRect(); return e.top >= 0 && e.left >= 0 && e.bottom + 80 <= (window.innerHeight || document.documentElement.clientHeight) && e.right <= (window.innerWidth || document.documentElement.clientWidth) } TxtType.prototype.tick = function () { let t = this.loopNum % this.toRotate.length, e = this.toRotate[t]; this.isDeleting ? this.txt = e.substring(0, this.txt.length - 1) : this.txt = e.substring(0, this.txt.length + 1), this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>"; let i = this, n = 150 - 100 * Math.random(); this.isDeleting && (n /= 6), this.isDeleting || this.txt !== e ? this.isDeleting && "" === this.txt && (this.isDeleting = !1, this.loopNum++, n = 0) : (n = this.period, this.isDeleting = !0), setTimeout((function () { i.tick() }), n) }, window.onload = function () { getLocation(), setYearCopyright(), handleLinkSosmedOnClick(), handleQRCodeOnClick(), handleStartTypingAnimation() };
     </script>
 </body>
 
