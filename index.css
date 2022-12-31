@@ -278,6 +278,10 @@ body,
   padding: 0 2rem;
 }
 
+.media-social li {
+  margin: 1rem;
+}
+
 .media-social .icon {
   width: 60px;
   height: 60px;
@@ -288,8 +292,8 @@ body,
   font-size: 25px;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
   animation: shadow-down 0.5s forwards ease-in-out;
+  cursor: pointer;
 }
 
 .media-social .icon:hover {
