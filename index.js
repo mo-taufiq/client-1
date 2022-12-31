@@ -6,11 +6,11 @@ const volumeButtonIcon = document.querySelector(".volume-button i");
 
 const sounds = [
   "mixkit-typewriter-soft-hit-1366.wav",
+  "mixkit-typewriter-soft-click-1125.wav",
   "mixkit-hard-typewriter-click-1119.wav",
-  "mixkit-typewriter-hit-1362.wav",
 ];
 const deleteSound = "mixkit-typewriter-soft-click-1125.wav";
-const spaceSound = "space-hit.wav";
+const spaceSound = "mixkit-typewriter-hit-1362.wav";
 let keystrokeSound = null;
 
 let isMute = true;
@@ -39,6 +39,7 @@ const playSoundEffect = (name) => {
 
   if (name === "") {
     let rand = generateRandomNumberBetween(0, 2);
+    console.log(rand);
     name = sounds[rand];
   }
 
@@ -68,12 +69,12 @@ function WriterAnimation(
   this.writer = () => {
     if (this.idxChar < this.fullText.length && !this.isDelete) {
       const char = this.fullText.charAt(this.idxChar);
+      this.element.innerHTML += this.fullText.charAt(this.idxChar);
       let soundName = "";
       if (char === " ") {
         soundName = spaceSound;
       }
       playSoundEffect(soundName);
-      this.element.innerHTML += this.fullText.charAt(this.idxChar);
       this.idxChar++;
 
       if (this.idxChar == this.fullText.length) {
@@ -89,14 +90,14 @@ function WriterAnimation(
       }
     } else if (this.isDelete) {
       this.fullText = this.element.innerHTML;
-      if (this.play) {
-        playSoundEffect(deleteSound);
-        this.play = false;
-      }
       this.element.innerHTML = this.fullText.substring(
         0,
         this.fullText.length - 1
       );
+      if (this.play) {
+        playSoundEffect(deleteSound);
+        this.play = false;
+      }
       this.idxChar--;
 
       if (this.idxChar == 0) {
@@ -126,7 +127,7 @@ function WriterAnimation(
 const writerAnimation = new WriterAnimation(
   writerAnimationEl,
   writerAnimationTexts,
-  [50, 100],
+  [80, 150],
   10,
   4000,
   () => {}
