@@ -5,12 +5,12 @@ const volumeButton = document.querySelector(".volume-button");
 const volumeButtonIcon = document.querySelector(".volume-button i");
 
 const sounds = [
+  "mixkit-typewriter-soft-hit-1366.wav",
   "mixkit-hard-typewriter-click-1119.wav",
   "mixkit-typewriter-hit-1362.wav",
-  "mixkit-typewriter-soft-click-1125.wav",
-  "mixkit-typewriter-soft-hit-1366.wav",
 ];
-const deleteSound = sounds[0];
+const deleteSound = "mixkit-typewriter-soft-click-1125.wav";
+const spaceSound = "space-hit.wav";
 let keystrokeSound = null;
 
 let isMute = true;
@@ -49,14 +49,14 @@ const playSoundEffect = (name) => {
 function WriterAnimation(
   element,
   texts,
-  writeSpeed,
+  rangeWriteSpeed,
   deleteSpeed,
   deleteDelay,
   callback
 ) {
   this.element = element;
   this.texts = texts;
-  this.writeSpeed = writeSpeed;
+  this.rangeWriteSpeed = rangeWriteSpeed;
   this.deleteSpeed = deleteSpeed;
   this.deleteDelay = deleteDelay;
   this.idxText = 0;
@@ -67,7 +67,12 @@ function WriterAnimation(
 
   this.writer = () => {
     if (this.idxChar < this.fullText.length && !this.isDelete) {
-      playSoundEffect("");
+      const char = this.fullText.charAt(this.idxChar);
+      let soundName = "";
+      if (char === " ") {
+        soundName = spaceSound;
+      }
+      playSoundEffect(soundName);
       this.element.innerHTML += this.fullText.charAt(this.idxChar);
       this.idxChar++;
 
@@ -76,8 +81,10 @@ function WriterAnimation(
         this.isDelete = true;
         this.play = true;
       } else {
-        let rand = generateRandomNumberBetween(30, 100);
-        // setTimeout(this.writer, this.writeSpeed);
+        let rand = generateRandomNumberBetween(
+          this.rangeWriteSpeed[0],
+          this.rangeWriteSpeed[1]
+        );
         setTimeout(this.writer, rand);
       }
     } else if (this.isDelete) {
@@ -119,7 +126,7 @@ function WriterAnimation(
 const writerAnimation = new WriterAnimation(
   writerAnimationEl,
   writerAnimationTexts,
-  100,
+  [50, 100],
   10,
   4000,
   () => {}
