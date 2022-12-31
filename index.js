@@ -39,7 +39,6 @@ const playSoundEffect = (name) => {
 
   if (name === "") {
     let rand = generateRandomNumberBetween(0, 2);
-    console.log(rand);
     name = sounds[rand];
   }
 
