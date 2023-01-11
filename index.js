@@ -148,7 +148,6 @@ document.addEventListener("scroll", () => {
     writerAnimation.startWriting();
   }
 
-  console.log(inViewport(writerAnimationEl));
   if (inViewport(writerAnimationEl)) {
     if (volumeButton.classList.contains("d-none")) {
       volumeButton.classList.remove("d-none");
@@ -170,4 +169,10 @@ volumeButton.addEventListener("click", (event) => {
     volumeButtonIcon.classList.add(volumeUP);
     isMute = false;
   }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  window.scrollTo(0, 0);
+  const el = document.querySelector(".container");
+  el.classList.add("rise");
 });

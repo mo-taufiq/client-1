@@ -457,3 +457,21 @@ body,
 .d-none {
   display: none;
 }
+
+.rise {
+  animation: rise 1s normal ease-in;
+}
+
+@keyframes rise {
+  from {
+    top: 200px;
+    position: relative;
+    opacity: 0;
+  }
+
+  to {
+    top: 0px;
+    position: relative;
+    opacity: 1;
+  }
+}
