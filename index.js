@@ -171,8 +171,12 @@ volumeButton.addEventListener("click", (event) => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  window.scrollTo(0, 0);
-  const el = document.querySelector(".container");
-  el.classList.add("rise");
+const loader = document.querySelector(".loading-container");
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    loader.classList.add("d-none");
+    const el = document.querySelector(".container");
+    el.classList.add("move-up");
+  }, 1000);
 });
