@@ -147,6 +147,17 @@ document.addEventListener("scroll", () => {
     isTextRunning = true;
     writerAnimation.startWriting();
   }
+
+  console.log(inViewport(writerAnimationEl));
+  if (inViewport(writerAnimationEl)) {
+    if (volumeButton.classList.contains("d-none")) {
+      volumeButton.classList.remove("d-none");
+    }
+  } else {
+    if (!volumeButton.classList.contains("d-none")) {
+      volumeButton.classList.add("d-none");
+    }
+  }
 });
 
 volumeButton.addEventListener("click", (event) => {
