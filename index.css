@@ -224,12 +224,12 @@ body,
 }
 
 .move-up {
-  animation: move-up 2s forwards ease-in-out;
+  animation: move-up 1s forwards ease-in;
 }
 
 @keyframes move-up {
   from {
-    transform: translateY(300px);
+    transform: translateY(200px);
     opacity: 0;
   }
 

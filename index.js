@@ -142,6 +142,7 @@ if (inViewport(writerAnimationEl) && !isTextRunning) {
   isTextRunning = true;
   writerAnimation.startWriting();
 }
+
 document.addEventListener("scroll", () => {
   if (inViewport(writerAnimationEl) && !isTextRunning) {
     isTextRunning = true;
