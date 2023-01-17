@@ -463,7 +463,7 @@ body,
 
 @media only screen and (max-width: 470px) {
   .spotify-playlist {
-    width: 80%;
+    width: 90%;
   }
 
   .spotify-playlist iframe {
