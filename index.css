@@ -259,7 +259,6 @@ body,
   width: 105%;
   height: 105%;
   object-position: -2px 0px;
-  filter: blur(0.2px);
 }
 
 .profile .name {
@@ -444,21 +443,7 @@ body,
   right: 20px;
   cursor: pointer;
   z-index: 1;
-}
-
-.volume-button .fa-volume-off {
-  margin-left: -10px;
-}
-
-.volume-button .fa-volume-off::after {
-  content: "x";
-  font-weight: bold;
-  display: inline-block;
-  font-family: "IBM Plex Mono";
-  font-size: 12px;
-  position: absolute;
-  top: 10.5px;
-  left: 19px;
+  padding: 0;
 }
 
 @media only screen and (max-width: 470px) {

@@ -11,9 +11,8 @@ const sounds = [
 ];
 const deleteSound = "mixkit-typewriter-soft-click-1125.wav";
 const spaceSound = "mixkit-typewriter-hit-1362.wav";
-let keystrokeSound = null;
 
-let isMute = true;
+let isMuted = true;
 
 const writerAnimationTexts = [
   "Anda ingin menyumbang? klik atau pindai kode QR dibawah.",
@@ -33,7 +32,7 @@ const generateRandomNumberBetween = (min, max) => {
 };
 
 const playSoundEffect = (name) => {
-  if (isMute) {
+  if (isMuted) {
     return;
   }
 
@@ -42,7 +41,7 @@ const playSoundEffect = (name) => {
     name = sounds[rand];
   }
 
-  keystrokeSound = new Audio(`./assets/sounds/${name}`);
+  let keystrokeSound = new Audio(`./assets/sounds/${name}`);
   keystrokeSound.play();
 };
 
@@ -164,11 +163,15 @@ volumeButton.addEventListener("click", (event) => {
   if (volumeButtonIcon.classList.contains(volumeUP)) {
     volumeButtonIcon.classList.remove(volumeUP);
     volumeButtonIcon.classList.add(volumeMute);
-    isMute = true;
+    isMuted = true;
   } else {
     volumeButtonIcon.classList.remove(volumeMute);
     volumeButtonIcon.classList.add(volumeUP);
-    isMute = false;
+    isMuted = false;
+    let keystrokeSound = new Audio(
+      "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV"
+    );
+    keystrokeSound.play();
   }
 });
 
